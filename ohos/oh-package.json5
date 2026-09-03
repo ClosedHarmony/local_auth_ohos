@@ -1,0 +1,11 @@
+{
+  "name": "local_auth_ohos",
+  "version": "1.0.0",
+  "description": "HarmonyOS local authentication plugin for local_auth (UserIAM userAuth).",
+  "main": "index.ets",
+  "author": "TsinbeiLabs",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@ohos/flutter_ohos": "file:./har/flutter.har"
+  }
+}
