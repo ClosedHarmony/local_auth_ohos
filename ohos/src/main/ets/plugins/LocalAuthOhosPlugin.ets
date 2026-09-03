@@ -38,7 +38,7 @@ const CHANNEL_NAME: string = 'org.tsinbeilabs.local_auth_ohos/auth';
  */
 export default class LocalAuthOhosPlugin implements FlutterPlugin, MethodCallHandler {
   private channel: MethodChannel | null = null;
-  private currentInstance: userAuth.AuthInstance | null = null;
+  private currentInstance: userAuth.UserAuthInstance | null = null;
 
   onAttachedToEngine(binding: FlutterPluginBinding): void {
     this.channel = new MethodChannel(
@@ -181,11 +181,15 @@ export default class LocalAuthOhosPlugin implements FlutterPlugin, MethodCallHan
       // Challenge is unused by the caller; an empty buffer skips token
       // binding verification.
       const challenge = new Uint8Array(16);
-      const instance: userAuth.AuthInstance = userAuth.getAuthInstance(
-        challenge,
-        authType as userAuth.UserAuthType,
-        userAuth.AuthTrustLevel.ATL3,
-      );
+      const authParam: userAuth.AuthParam = {
+        challenge: challenge,
+        authType: [authType as userAuth.UserAuthType],
+        authTrustLevel: userAuth.AuthTrustLevel.ATL3,
+      };
+      const widgetParam: userAuth.WidgetParam = {
+        title: 'Luotopia',
+      };
+      const instance: userAuth.UserAuthInstance = userAuth.getUserAuthInstance(authParam, widgetParam);
       this.currentInstance = instance;
       const callback: userAuth.IAuthCallback = {
         onResult: (authResult: userAuth.UserAuthResult): void => {
