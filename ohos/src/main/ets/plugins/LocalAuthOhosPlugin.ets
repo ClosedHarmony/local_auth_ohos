@@ -23,7 +23,7 @@ import {
   MethodResult,
   StandardMethodCodec,
 } from '@ohos/flutter_ohos';
-import { userAuth } from '@ohos.userIAM.userAuth';
+import userAuth from '@ohos.userIAM.userAuth';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 const TAG: string = 'LocalAuthOhosPlugin';
