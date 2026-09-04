@@ -4,9 +4,9 @@ description: >-
   implementation for local_auth, backed by the UserIAM userAuth kit
   (@ohos.userIAM.userAuth).
 version: 1.0.0
-homepage: https://github.com/TsinbeiLabs/local_auth_ohos
-repository: https://github.com/TsinbeiLabs/local_auth_ohos
-issue_tracker: https://github.com/TsinbeiLabs/local_auth_ohos/issues
+homepage: https://github.com/ClosedHarmony/local_auth_ohos
+repository: https://github.com/ClosedHarmony/local_auth_ohos
+issue_tracker: https://github.com/ClosedHarmony/local_auth_ohos/issues
 
 environment:
   sdk: '>=3.9.0 <4.0.0'
